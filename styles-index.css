@@ -1,0 +1,331 @@
+:root {
+  /* ----------------- COLORES (base, fáciles de reasignar) ----------------- */
+  --color-primary: hsl(211 85% 45%); /* acento principal (botones, links) */
+  --color-primary-strong: hsl(211 85% 38%); /* hover/active */
+  --color-surface: hsl(217 35% 18%); /* tarjetas / barras oscuras */
+  --color-bg: hsl(211 41% 10%); /* fondo página (modo claro oscuro mezcla) */
+  --color-bg-muted: hsl(216, 19%, 15%); /* superficies secundarias */
+  --color-text: hsl(240 5% 96%); /* texto principal (casi blanco) */
+  --color-text-muted: hsl(217 18% 69%); /* texto secundario / placeholders */
+
+  /* ----------------- TIPOGRAFÍA ----------------- */
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  --font-size-base: 16px; /* base for rem calculations */
+  --lead-size: 1.125rem; /* for intro paragraphs */
+
+  /* ----------------- ESPACIADO (spacing scale) ----------------- */
+  --space-xxs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 0.75rem; /* 12px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2.5rem; /* 40px */
+
+  /* ----------------- RADIOS, SOMBRAS, TRANSITIONS ----------------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 100%;
+  --shadow-soft: 0 6px 18px rgba(2, 6, 23, 0.45);
+  --transition-fast: 180ms ease;
+
+  /* ----------------- LAYOUT TOKENS ----------------- */
+  --max-width: 100%; /* ancho máximo de contenido */
+  --page-padding: 2rem; /* padding lateral estándar (usado en containers) */
+  --container-gap: 1rem; /* gap general entre componentes */
+
+  /* ----------------- GRID / BREAKPOINTS ----------------- */
+  --bp-sm: 540px;
+  --bp-md: 768px;
+  --bp-lg: 920px;
+  --bp-xl: 1200px;
+
+  /* ----------------- Z-INDEX (escala pequeña) ----------------- */
+  --z-dropdown: 800;
+  --z-modal: 1000;
+  --z-sticky: 700;
+}
+
+/* -------- RESET PROFESIONAL (sin volver todo loco) -------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6; /*Separacion entre lineas*/
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*---------- CLASE CONTAINER -------------*/
+
+.container {
+  width: min(var(--max-width), 92%);
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+/****************INDEX.HTML*****************/
+
+/* -------- HEADER PRINCIPAL (navbar) -------- */
+header {
+  background: var(--color-bg);
+  padding-block: var(--container-gap);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--page-padding);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-decoration: none;
+  color: inherit;
+}
+.logo svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--color-primary, currentColor);
+}
+
+.logo:hover {
+  background: #ca4246;
+  background-color: #ca4246;
+  background: conic-gradient(
+    #ca4246 16.666%,
+    #e16541 16.666%,
+    #e16541 33.333%,
+    #f18f43 33.333%,
+    #f18f43 50%,
+    #8b9862 50%,
+    #8b9862 66.666%,
+    #476098 66.666%,
+    #476098 83.333%,
+    #a7489b 83.333%
+  );
+
+  background-size: 57%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text-animation-rev 0.6s ease forwards;
+  cursor: pointer;
+}
+@keyframes rainbow-text-animation {
+  0% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+}
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
+
+nav {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+nav > a:hover {
+  color: var(--color-primary-strong);
+  font-weight: bold;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.auth-buttons > a {
+  padding: var(--space-xs);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.auth-buttons > a:hover {
+  background-color: var(--color-bg-muted);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/*-------- MAIN HERO --------*/
+
+.hero {
+  /*Imagen de fondo para el hero*/
+  background: url("./background.webp") no-repeat center;
+
+  /*Altura minima para el hero*/
+  min-height: 50vh;
+
+  /*Centramos y damos espacios*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  /*Evitamos que se toquen los bordes*/
+  padding-block: 1rem;
+
+  /*Color del texto*/
+  color: var(--color-text);
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 4vw, 3rem);
+  font-weight: 800;
+  max-width: 1200px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+.hero-search {
+  margin-top: 1rem;
+}
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  background: var(--color-surface);
+  backdrop-filter: blur(6px);
+
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+
+  max-width: 550px;
+}
+
+.search-field svg {
+  width: 60px;
+  height: 20px;
+  stroke: var(--color-text-muted);
+}
+
+.search-field input {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  width: 700px;
+}
+
+.search-field input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-field button {
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-field button:hover {
+  background: var(--color-primary-strong);
+}
+
+/*-------- FEATURES --------*/
+.features {
+  text-align: center;
+  margin-block: 4rem;
+}
+
+.features-header p {
+  color: var(--color-text-muted);
+}
+
+/* GRID RESPONSIVE */
+.features-list {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* CARD */
+.feature {
+  background: var(--color-surface);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ICONO */
+.feature svg {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  stroke: var(--color-primary);
+}
+
+/* TITULO */
+.feature h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* TEXTO */
+.feature p {
+  color: var(--color-text-muted);
+}
+
+/*-----FOOTER DE PAGINA CopyRigth-----------*/
+
+footer {
+  color: var(--color-text-muted);
+  text-align: center;
+}
