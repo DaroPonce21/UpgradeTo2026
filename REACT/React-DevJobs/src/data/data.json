@@ -1,0 +1,122 @@
+[
+  {
+    "id": "b12e3db3-1a7c-4eed-a92b-9ac91e726b11",
+    "titulo": "Desarrollador Frontend React",
+    "empresa": "CodeWave",
+    "ubicacion": "Remoto",
+    "descripcion": "Buscamos un frontend developer con experiencia en React, CSS moderno y consumo de APIs REST.",
+    "data": {
+      "technology": ["react", "javascript"],
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "c31f7af9-d0e1-4457-9c60-b930a55cbd7c",
+    "titulo": "Ingeniero Backend Node.js",
+    "empresa": "DigitalWorks",
+    "ubicacion": "Hibrido",
+    "descripcion": "Responsable de desarrollar servicios backend escalables utilizando Node.js, Express y bases de datos SQL.",
+    "data": {
+      "technology": ["node", "javascript"],
+      "modalidad": "hibrido",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "a8d2138d-531b-4d98-a728-49859efdb35c",
+    "titulo": "Programador Python",
+    "empresa": "DataCore",
+    "ubicacion": "Presencial",
+    "descripcion": "Buscamos desarrollador Python para trabajar con automatizaciones y análisis de datos. Conocimiento en pandas es un plus.",
+    "data": {
+      "technology": ["python"],
+      "modalidad": "presencial",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "e5fcf82f-c4f0-4eed-a6fc-a2c11a94f660",
+    "titulo": "Full Stack Developer",
+    "empresa": "Nexa Labs",
+    "ubicacion": "Remoto",
+    "descripcion": "Buscamos full stack developer con experiencia en React, Node.js y bases de datos relacionales.",
+    "data": {
+      "technology": ["react", "node", "javascript"],
+      "modalidad": "remoto",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "f29e9128-2a54-4bb8-b034-82aa993e43ce",
+    "titulo": "Desarrollador Java",
+    "empresa": "GlobalSoft",
+    "ubicacion": "Presencial",
+    "descripcion": "Puesto presencial para desarrollo y mantenimiento de aplicaciones empresariales construidas en Java.",
+    "data": {
+      "technology": ["java"],
+      "modalidad": "presencial",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "d72e8cf0-df83-4e19-b6bc-cb3c23b4512d",
+    "titulo": "Analista Programador",
+    "empresa": "BlueTech",
+    "ubicacion": "Hibrido",
+    "descripcion": "Buscamos un analista programador con conocimientos generalistas en SQL, JavaScript y estructuras de datos.",
+    "data": {
+      "technology": ["javascript", "sql"],
+      "modalidad": "hibrido",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "e8dfd5d2-44d0-46ee-a15d-a2a7c361a7ee",
+    "titulo": "Backend Developer Python",
+    "empresa": "CloudBridge",
+    "ubicacion": "Remoto",
+    "descripcion": "El candidato trabajará en microservicios con Python, FastAPI y Docker.",
+    "data": {
+      "technology": ["python"],
+      "modalidad": "remoto",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "3f144934-39da-4ddc-8bd5-44f457f3aaf0",
+    "titulo": "Ingeniero de Datos",
+    "empresa": "DataFlow",
+    "ubicacion": "Hibrido",
+    "descripcion": "Buscamos ingeniero de datos con conocimientos en pipelines, Python y SQL.",
+    "data": {
+      "technology": ["python", "sql"],
+      "modalidad": "hibrido",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "fae732cb-62fa-4f6b-bf21-118ica41f08d",
+    "titulo": "Frontend Developer JavaScript",
+    "empresa": "UIFactory",
+    "ubicacion": "Presencial",
+    "descripcion": "Desarrollo de interfaces web modernas con JavaScript vanilla, CSS y HTML semántico.",
+    "data": {
+      "technology": ["javascript"],
+      "modalidad": "presencial",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "c6e99fe4-0a0f-4a32-83b6-f173f5e5c682",
+    "titulo": "Software Engineer React + Node",
+    "empresa": "FutureCode",
+    "ubicacion": "Remoto",
+    "descripcion": "Buscamos desarrollador con experiencia full stack para trabajar con React, Node.js y APIs REST.",
+    "data": {
+      "technology": ["react", "node", "javascript"],
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  }
+]
