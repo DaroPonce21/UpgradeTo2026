@@ -1,18 +1,25 @@
-import React from "react";
+import "../styles/FormLogin.css";
 
 const FormLogin = () => {
   return (
     <div>
-      <form action="submit" className="">
-        <div className="inputform">
+      <form action="submit" className="loginForm">
+        <div className="LoginTopForm">
           <label htmlFor="email" className="visually-hidden">
             introdusca su email
           </label>
-          <input type="email" name="email" id="email" placeholder="Email" />
+          <input
+            className="loginInputs"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+          />
           <label htmlFor="password" className="visually-hidden">
             introdusca su contraseña
           </label>
           <input
+            className="loginInputs"
             type="password"
             name="password"
             id="password"
@@ -24,15 +31,19 @@ const FormLogin = () => {
             Seleccionar para recordar usuario
           </label>
           <input type="checkbox" name="checkbox" id="checkbox"></input>
-          <label htmlFor="checkbox">Recuerdame</label>
-          <a href="/forgot-password">Olvide mi contraseña</a>
+          <label className="rememberMe" htmlFor="checkbox">
+            Recuerdame
+          </label>
+          <a className="restartPass" href="/forgot-password">
+            Olvide mi contraseña
+          </a>
         </div>
         <div className="button">
-          <button className="button-apply" type="submit">
+          <button className="button-apply-Login" type="submit">
             Ingresar
           </button>
         </div>
-        <legend>¿No tienes cuenta?</legend>
+        <legend className="create-accout">¿No tienes cuenta?</legend>
         <div className="auth-buttons">
           <a className="button">Crear cuenta para Desarrollador</a>
           <a>Crear cuenta para Empresa</a>

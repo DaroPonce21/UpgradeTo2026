@@ -9,6 +9,7 @@ import Salarios from "./pages/Salarios";
 import Publicar from "./pages/Publicar";
 import Perfil from "./pages/Perfil";
 import JobDescription from "./pages/JobDescription";
+import "./styles/index.css";
 
 function App() {
   return (

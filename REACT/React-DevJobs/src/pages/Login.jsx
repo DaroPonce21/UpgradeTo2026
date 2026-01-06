@@ -1,15 +1,18 @@
 import React from "react";
 import MainNavBar from "../components/MainNavBar";
 import FormLogin from "../components/FormLogin";
+import "../styles/LoginTitle.css";
 
 const Login = () => {
   return (
     <>
       <MainNavBar />
       <main className="container">
-        <h2>Iniciar seccion</h2>
-        <p>introdusca sus claves de acceso</p>
-        <FormLogin />
+        <div className="Logingcenter">
+          <h2 className="Title">Iniciar seccion</h2>
+          <p className="texto">introdusca sus claves de acceso</p>
+          <FormLogin />
+        </div>
       </main>
     </>
   );

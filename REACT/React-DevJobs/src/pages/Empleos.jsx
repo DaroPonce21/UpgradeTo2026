@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import HeroJob from "../components/HeroJob";
 import JobList from "../components/JobList";
-import "../styles/Empleos.css";
+import Pagination from "../components/Pagination";
 
 const Empleos = () => {
   return (
@@ -10,6 +10,7 @@ const Empleos = () => {
       <NavBar />
       <HeroJob />
       <JobList />
+      <Pagination />
     </>
   );
 };
