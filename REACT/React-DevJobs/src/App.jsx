@@ -10,6 +10,7 @@ import Publicar from "./pages/Publicar";
 import Perfil from "./pages/Perfil";
 import JobDescription from "./pages/JobDescription";
 import "./styles/index.css";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
