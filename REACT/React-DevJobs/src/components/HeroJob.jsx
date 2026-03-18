@@ -1,13 +1,13 @@
 import "../styles/HeroJob.css";
 
-const HeroJob = () => {
+const HeroJob = ({ onFiltroChange, onInputChange, tecnologiasDisponibles }) => {
   return (
     <main className="container">
-      <section class="Hero-job">
+      <section className="Hero-job">
         <h1>Encuentra tu próximo trabajo</h1>
         <p>Explora miles de oportunidades en el sector tecnológico</p>
-        <form action="search" class="job-form">
-          <div class="job-search-field">
+        <form action="search" className="job-form">
+          <div className="job-search-field">
             <svg
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
@@ -16,16 +16,16 @@ const HeroJob = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="icon icon-tabler icons-tabler-outline icon-tabler-search"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
               <path d="M21 21l-6 -6" />
             </svg>
-            <label for="searchJobs" class="visually-hidden">
+            <label htmlFor="searchJobs" className="visually-hidden">
               Campo para buscar trabajos, empresas o habilidades
             </label>
             <input
@@ -33,42 +33,48 @@ const HeroJob = () => {
               name="searchJobs"
               id="searchJobs"
               placeholder="Buscar trabajos, empresas o habilidades"
+              onChange={onInputChange}
             />
           </div>
-          <div class="job-search-select">
-            <select name="tecnologia" id="filter-technology">
-              <option value="default" hidden>
+          <div className="job-search-select">
+            <select
+              name="tecnologia"
+              id="filter-technology"
+              onChange={onFiltroChange}
+            >
+              <option value="" hidden>
                 Tecnologia
               </option>
-              <option value="todas">Todas</option>
-              <option value="javascript">JavaScript</option>
-              <option value="python">Python</option>
-              <option value="java">Java</option>
-              <option value="react">React</option>
+              <option value="">Todas</option>
+              {tecnologiasDisponibles.map((tech) => (
+                <option key={tech} value={tech}>
+                  {tech}
+                </option>
+              ))}
             </select>
-            <select name="ubicacion" id="filter-ubication">
-              <option value="default" hidden>
+            <select
+              name="ubicacion"
+              id="filter-ubication"
+              onChange={onFiltroChange}
+            >
+              <option value="" hidden>
                 Ubicacion
               </option>
-              <option value="todas">Todas</option>
-              <option value="remoto">Remoto</option>
-              <option value="hibrido">Hibrido</option>
-              <option value="presencial">Presencial</option>
+              <option value="">Todas</option>
+              <option value="Remoto">Remoto</option>
+              <option value="Hibrido">Hibrido</option>
+              <option value="Presencial">Presencial</option>
             </select>
-            <select name="contrato" id="filter-contrato">
-              <option value="default" hidden>
-                Tipo de contrato
-              </option>
-              <option value="todas">Todas</option>
-              <option value="full-time">Full Time</option>
-              <option value="part-time">Part Time</option>
-              <option value="freelance">Freelance</option>
-            </select>
-            <select name="experiencia" id="filter-experiencia">
-              <option value="default" hidden>
+
+            <select
+              name="experiencia"
+              id="filter-experiencia"
+              onChange={onFiltroChange}
+            >
+              <option value="" hidden>
                 Nivel de experiencia
               </option>
-              <option value="todas">Todas</option>
+              <option value="">Todas</option>
               <option value="junior">Junior</option>
               <option value="semi-senior">Semi Senior</option>
               <option value="senior">Senior</option>

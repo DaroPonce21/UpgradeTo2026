@@ -4,19 +4,19 @@ import "../styles/JobDescription.css";
 const JobDescription = () => {
   return (
     <main className="container">
-      <header class="directorio">
+      <header className="directorio">
         <p>Empleos</p>
         <p>/</p>
-        <p class="job-name">Ingeniero de Software</p>
+        <p className="job-name">Ingeniero de Software</p>
       </header>
 
-      <section class="title">
+      <section className="title">
         <header>
-          <div class="title-bottom">
+          <div className="title-bottom">
             <h1>Web Developer</h1>
-            <button class="button-apply">Aplicar ahora</button>
+            <button className="button-apply">Aplicar ahora</button>
           </div>
-          <div class="props">
+          <div className="props">
             <p>PicaCodigos</p>
             <p>|</p>
             <p>Hibrido</p>
@@ -24,7 +24,7 @@ const JobDescription = () => {
         </header>
       </section>
 
-      <section class="descripcion">
+      <section className="descripcion">
         <article>
           <h2>Descripción del puesto</h2>
           <p>
@@ -46,10 +46,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -72,10 +72,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -99,10 +99,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -125,10 +125,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -156,10 +156,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -182,10 +182,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -209,10 +209,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -235,10 +235,10 @@ const JobDescription = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
@@ -265,8 +265,8 @@ const JobDescription = () => {
           </p>
         </article>
       </section>
-      <div class="footer-bottom">
-        <button class="button-final">Aplicar ahora</button>
+      <div className="footer-bottom">
+        <button className="button-final">Aplicar ahora</button>
       </div>
     </main>
   );

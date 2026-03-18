@@ -8,6 +8,10 @@
 
 .jobs-list-title h2 {
   font-size: 2rem;
+  padding-left: var(--space-xl);
+}
+.jobs-list-title p {
+  padding-left: var(--space-xl);
 }
 
 .jobs-list-container ul {

@@ -1,14 +1,44 @@
 import "../styles/JobList.css";
 
-const JobList = () => {
+const JobList = ({ trabajos, cantidad, paginas }) => {
   return (
     <>
-      <section class="jobs-list">
-        <header class="jobs-list-title">
+      <section className="jobs-list">
+        <header className="jobs-list-title">
           <h2>Resultados de la búsqueda</h2>
+          <p>
+            Se encotraron {cantidad} trabajos totales en {paginas} paginas
+          </p>
         </header>
-        <div class="jobs-list-container">
-          <ul class="list-jobs-ul">ACA VA LA LISTA DE EMPLEOS</ul>
+        <div className="jobs-list-container">
+          <ul className="list-jobs-ul">
+            {trabajos?.map((job) => (
+              <article key={job.id}>
+                <header>
+                  <div className="title-bottom">
+                    <a href="./jobDesc.html">
+                      <h3>{job.titulo}</h3>
+                    </a>
+                    <button className="button-apply">Aplicar</button>
+                  </div>
+                  <div className="props">
+                    <p>{job.empresa}</p>
+                    <p>|</p>
+                    <p className="tech">
+                      {job.data.technology.join(" - ").toUpperCase()}
+                    </p>
+                    <p>|</p>
+                    <p className="ubicacion">{job.ubicacion.toUpperCase()}</p>
+                    <p>|</p>
+                    <p className="nivel">{job.data.nivel.toUpperCase()}</p>
+                  </div>
+                </header>
+                <div>
+                  <p>{job.descripcion}</p>
+                </div>
+              </article>
+            ))}
+          </ul>
         </div>
       </section>
     </>

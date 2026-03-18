@@ -1,0 +1,244 @@
+[
+  {
+    "id": "1",
+    "titulo": "Frontend React Developer",
+    "empresa": "PixelForge",
+    "ubicacion": "Remoto",
+    "descripcion": "Desarrollo de interfaces modernas con React.",
+    "data": {
+      "technology": ["react", "javascript"],
+      "modalidad": "remoto",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "2",
+    "titulo": "Backend Node.js Developer",
+    "empresa": "CloudNova",
+    "ubicacion": "Hibrido",
+    "descripcion": "Creación de APIs REST con Node.js y Express.",
+    "data": {
+      "technology": ["node", "javascript"],
+      "modalidad": "hibrido",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "3",
+    "titulo": "Python Backend Engineer",
+    "empresa": "DataBridge",
+    "ubicacion": "Remoto",
+    "descripcion": "Microservicios y automatizaciones con Python.",
+    "data": {
+      "technology": ["python"],
+      "modalidad": "remoto",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "4",
+    "titulo": "Angular Frontend Engineer",
+    "empresa": "WebSphere",
+    "ubicacion": "Presencial",
+    "descripcion": "Aplicaciones empresariales con Angular.",
+    "data": {
+      "technology": ["angular", "typescript"],
+      "modalidad": "presencial",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "5",
+    "titulo": "Java Software Engineer",
+    "empresa": "FintechCore",
+    "ubicacion": "Hibrido",
+    "descripcion": "Desarrollo backend en Java con Spring.",
+    "data": {
+      "technology": ["java"],
+      "modalidad": "hibrido",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "6",
+    "titulo": "Full Stack React + Node",
+    "empresa": "DevLabs",
+    "ubicacion": "Remoto",
+    "descripcion": "Aplicaciones completas con React y Node.",
+    "data": {
+      "technology": ["react", "node", "javascript"],
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "7",
+    "titulo": "Data Engineer",
+    "empresa": "InsightFlow",
+    "ubicacion": "Hibrido",
+    "descripcion": "Pipelines de datos y análisis con Python y SQL.",
+    "data": {
+      "technology": ["python", "sql"],
+      "modalidad": "hibrido",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "8",
+    "titulo": "Junior JavaScript Developer",
+    "empresa": "UIFactory",
+    "ubicacion": "Presencial",
+    "descripcion": "Interfaces web modernas con JS.",
+    "data": {
+      "technology": ["javascript"],
+      "modalidad": "presencial",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "9",
+    "titulo": "Vue Frontend Developer",
+    "empresa": "GreenSoft",
+    "ubicacion": "Remoto",
+    "descripcion": "Aplicaciones SPA con Vue.",
+    "data": {
+      "technology": ["vue", "javascript"],
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "10",
+    "titulo": "DevOps Engineer",
+    "empresa": "CloudForge",
+    "ubicacion": "Hibrido",
+    "descripcion": "Automatización de infraestructura.",
+    "data": {
+      "technology": ["docker", "kubernetes"],
+      "modalidad": "hibrido",
+      "nivel": "senior"
+    }
+  },
+
+  {
+    "id": "11",
+    "titulo": "Go Backend Developer",
+    "empresa": "ByteScale",
+    "ubicacion": "Remoto",
+    "descripcion": "Servicios backend de alta performance.",
+    "data": {
+      "technology": ["go"],
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "12",
+    "titulo": "Rust Systems Developer",
+    "empresa": "KernelWorks",
+    "ubicacion": "Presencial",
+    "descripcion": "Desarrollo de sistemas en Rust.",
+    "data": {
+      "technology": ["rust"],
+      "modalidad": "presencial",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "13",
+    "titulo": "PHP Backend Developer",
+    "empresa": "WebMarket",
+    "ubicacion": "Remoto",
+    "descripcion": "Mantenimiento de plataformas PHP.",
+    "data": {
+      "technology": ["php"],
+      "modalidad": "remoto",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "14",
+    "titulo": "C# .NET Engineer",
+    "empresa": "EnterpriseApps",
+    "ubicacion": "Hibrido",
+    "descripcion": "Aplicaciones corporativas con .NET.",
+    "data": {
+      "technology": ["csharp"],
+      "modalidad": "hibrido",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "15",
+    "titulo": "React UI Engineer",
+    "empresa": "BrightUI",
+    "ubicacion": "Remoto",
+    "descripcion": "Interfaces modernas con React.",
+    "data": {
+      "technology": ["react", "typescript"],
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  },
+
+  {
+    "id": "16",
+    "titulo": "SQL Database Developer",
+    "empresa": "DataBank",
+    "ubicacion": "Presencial",
+    "descripcion": "Optimización de bases SQL.",
+    "data": {
+      "technology": ["sql"],
+      "modalidad": "presencial",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "17",
+    "titulo": "Node Microservices Developer",
+    "empresa": "ServiceHub",
+    "ubicacion": "Remoto",
+    "descripcion": "Arquitectura de microservicios.",
+    "data": {
+      "technology": ["node", "docker"],
+      "modalidad": "remoto",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "18",
+    "titulo": "Frontend Vue Engineer",
+    "empresa": "NextUI",
+    "ubicacion": "Hibrido",
+    "descripcion": "SPAs con Vue.",
+    "data": {
+      "technology": ["vue"],
+      "modalidad": "hibrido",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "19",
+    "titulo": "Python Data Analyst",
+    "empresa": "MetricLabs",
+    "ubicacion": "Remoto",
+    "descripcion": "Análisis de datos con Python.",
+    "data": {
+      "technology": ["python", "sql"],
+      "modalidad": "remoto",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "20",
+    "titulo": "React Native Developer",
+    "empresa": "MobileCraft",
+    "ubicacion": "Remoto",
+    "descripcion": "Apps móviles con React Native.",
+    "data": {
+      "technology": ["react", "javascript"],
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  }
+]
