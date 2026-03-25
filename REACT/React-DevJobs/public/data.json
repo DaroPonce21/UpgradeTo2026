@@ -5,6 +5,7 @@
     "empresa": "PixelForge",
     "ubicacion": "Remoto",
     "descripcion": "Desarrollo de interfaces modernas con React.",
+    "fecha": "2026/10/21",
     "data": {
       "technology": ["react", "javascript"],
       "modalidad": "remoto",
@@ -17,6 +18,7 @@
     "empresa": "CloudNova",
     "ubicacion": "Hibrido",
     "descripcion": "Creación de APIs REST con Node.js y Express.",
+    "fecha": "2026/05/10",
     "data": {
       "technology": ["node", "javascript"],
       "modalidad": "hibrido",
@@ -29,6 +31,7 @@
     "empresa": "DataBridge",
     "ubicacion": "Remoto",
     "descripcion": "Microservicios y automatizaciones con Python.",
+    "fecha": "2026/06/22",
     "data": {
       "technology": ["python"],
       "modalidad": "remoto",
@@ -41,6 +44,7 @@
     "empresa": "WebSphere",
     "ubicacion": "Presencial",
     "descripcion": "Aplicaciones empresariales con Angular.",
+    "fecha": "2026/06/03",
     "data": {
       "technology": ["angular", "typescript"],
       "modalidad": "presencial",
@@ -53,6 +57,7 @@
     "empresa": "FintechCore",
     "ubicacion": "Hibrido",
     "descripcion": "Desarrollo backend en Java con Spring.",
+    "fecha": "2026/07/08",
     "data": {
       "technology": ["java"],
       "modalidad": "hibrido",
@@ -65,6 +70,7 @@
     "empresa": "DevLabs",
     "ubicacion": "Remoto",
     "descripcion": "Aplicaciones completas con React y Node.",
+    "fecha": "2026/02/21",
     "data": {
       "technology": ["react", "node", "javascript"],
       "modalidad": "remoto",
@@ -77,6 +83,7 @@
     "empresa": "InsightFlow",
     "ubicacion": "Hibrido",
     "descripcion": "Pipelines de datos y análisis con Python y SQL.",
+    "fecha": "2026/02/21",
     "data": {
       "technology": ["python", "sql"],
       "modalidad": "hibrido",
@@ -89,6 +96,7 @@
     "empresa": "UIFactory",
     "ubicacion": "Presencial",
     "descripcion": "Interfaces web modernas con JS.",
+    "fecha": "2026/09/27",
     "data": {
       "technology": ["javascript"],
       "modalidad": "presencial",
@@ -101,6 +109,7 @@
     "empresa": "GreenSoft",
     "ubicacion": "Remoto",
     "descripcion": "Aplicaciones SPA con Vue.",
+    "fecha": "2026/07/08",
     "data": {
       "technology": ["vue", "javascript"],
       "modalidad": "remoto",
@@ -113,6 +122,7 @@
     "empresa": "CloudForge",
     "ubicacion": "Hibrido",
     "descripcion": "Automatización de infraestructura.",
+    "fecha": "2026/04/12",
     "data": {
       "technology": ["docker", "kubernetes"],
       "modalidad": "hibrido",
@@ -126,6 +136,7 @@
     "empresa": "ByteScale",
     "ubicacion": "Remoto",
     "descripcion": "Servicios backend de alta performance.",
+    "fecha": "2026/08/08",
     "data": {
       "technology": ["go"],
       "modalidad": "remoto",
@@ -138,6 +149,7 @@
     "empresa": "KernelWorks",
     "ubicacion": "Presencial",
     "descripcion": "Desarrollo de sistemas en Rust.",
+    "fecha": "2026/07/22",
     "data": {
       "technology": ["rust"],
       "modalidad": "presencial",
@@ -150,6 +162,7 @@
     "empresa": "WebMarket",
     "ubicacion": "Remoto",
     "descripcion": "Mantenimiento de plataformas PHP.",
+    "fecha": "2026/12/05",
     "data": {
       "technology": ["php"],
       "modalidad": "remoto",
@@ -162,6 +175,7 @@
     "empresa": "EnterpriseApps",
     "ubicacion": "Hibrido",
     "descripcion": "Aplicaciones corporativas con .NET.",
+    "fecha": "2026/11/05",
     "data": {
       "technology": ["csharp"],
       "modalidad": "hibrido",
@@ -174,6 +188,7 @@
     "empresa": "BrightUI",
     "ubicacion": "Remoto",
     "descripcion": "Interfaces modernas con React.",
+    "fecha": "2026/07/17",
     "data": {
       "technology": ["react", "typescript"],
       "modalidad": "remoto",
@@ -187,6 +202,7 @@
     "empresa": "DataBank",
     "ubicacion": "Presencial",
     "descripcion": "Optimización de bases SQL.",
+    "fecha": "2026/08/08",
     "data": {
       "technology": ["sql"],
       "modalidad": "presencial",
@@ -199,6 +215,7 @@
     "empresa": "ServiceHub",
     "ubicacion": "Remoto",
     "descripcion": "Arquitectura de microservicios.",
+    "fecha": "2026/04/12",
     "data": {
       "technology": ["node", "docker"],
       "modalidad": "remoto",
@@ -211,6 +228,7 @@
     "empresa": "NextUI",
     "ubicacion": "Hibrido",
     "descripcion": "SPAs con Vue.",
+    "fecha": "2026/10/08",
     "data": {
       "technology": ["vue"],
       "modalidad": "hibrido",
@@ -223,6 +241,7 @@
     "empresa": "MetricLabs",
     "ubicacion": "Remoto",
     "descripcion": "Análisis de datos con Python.",
+    "fecha": "2026/02/02",
     "data": {
       "technology": ["python", "sql"],
       "modalidad": "remoto",
@@ -235,6 +254,7 @@
     "empresa": "MobileCraft",
     "ubicacion": "Remoto",
     "descripcion": "Apps móviles con React Native.",
+    "fecha": "2026/07/08",
     "data": {
       "technology": ["react", "javascript"],
       "modalidad": "remoto",

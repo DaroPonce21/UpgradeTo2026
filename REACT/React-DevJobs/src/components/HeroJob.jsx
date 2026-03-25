@@ -1,6 +1,11 @@
 import "../styles/HeroJob.css";
 
-const HeroJob = ({ onFiltroChange, onInputChange, tecnologiasDisponibles }) => {
+const HeroJob = ({
+  onFiltroChange,
+  onInputChange,
+  tecnologiasDisponibles,
+  onSortChange,
+}) => {
   return (
     <main className="container">
       <section className="Hero-job">
@@ -36,49 +41,94 @@ const HeroJob = ({ onFiltroChange, onInputChange, tecnologiasDisponibles }) => {
               onChange={onInputChange}
             />
           </div>
-          <div className="job-search-select">
-            <select
-              name="tecnologia"
-              id="filter-technology"
-              onChange={onFiltroChange}
-            >
-              <option value="" hidden>
-                Tecnologia
-              </option>
-              <option value="">Todas</option>
-              {tecnologiasDisponibles.map((tech) => (
-                <option key={tech} value={tech}>
-                  {tech}
+          <div className="super-job-select">
+            <div className="job-search-select">
+              <select
+                name="tecnologia"
+                id="filter-technology"
+                onChange={onFiltroChange}
+              >
+                <option value="" hidden>
+                  Tecnologia
                 </option>
-              ))}
-            </select>
-            <select
-              name="ubicacion"
-              id="filter-ubication"
-              onChange={onFiltroChange}
-            >
-              <option value="" hidden>
-                Ubicacion
-              </option>
-              <option value="">Todas</option>
-              <option value="Remoto">Remoto</option>
-              <option value="Hibrido">Hibrido</option>
-              <option value="Presencial">Presencial</option>
-            </select>
+                <option value="">Todas</option>
+                {tecnologiasDisponibles.map((tech) => (
+                  <option key={tech} value={tech}>
+                    {tech}
+                  </option>
+                ))}
+              </select>
+              <select
+                name="ubicacion"
+                id="filter-ubication"
+                onChange={onFiltroChange}
+              >
+                <option value="" hidden>
+                  Ubicacion
+                </option>
+                <option value="">Todas</option>
+                <option value="Remoto">Remoto</option>
+                <option value="Hibrido">Hibrido</option>
+                <option value="Presencial">Presencial</option>
+              </select>
 
-            <select
-              name="experiencia"
-              id="filter-experiencia"
-              onChange={onFiltroChange}
-            >
-              <option value="" hidden>
-                Nivel de experiencia
-              </option>
-              <option value="">Todas</option>
-              <option value="junior">Junior</option>
-              <option value="semi-senior">Semi Senior</option>
-              <option value="senior">Senior</option>
-            </select>
+              <select
+                name="experiencia"
+                id="filter-experiencia"
+                onChange={onFiltroChange}
+              >
+                <option value="" hidden>
+                  Nivel de experiencia
+                </option>
+                <option value="">Todas</option>
+                <option value="junior">Junior</option>
+                <option value="semi-senior">Semi Senior</option>
+                <option value="senior">Senior</option>
+              </select>
+            </div>
+            <div className="job-search-select">
+              <select
+                name="filter"
+                id="filter-sortName"
+                onChange={onSortChange}
+              >
+                <option value="" hidden>
+                  Ordenar trabajos de:
+                </option>
+                <option value="abc">Empresas A-Z</option>
+                <option value="zyx">Empresas Z-A</option>
+                <option value="new">Mas Recientes</option>
+                <option value="j-s">Junior - Senior</option>
+                <option value="s-j">Senior - Junior</option>
+              </select>
+
+              {/*Para un futuro
+              <select
+                name="sortTech"
+                id="filter-sortTech"
+                onChange={onSortChange}
+              >
+                <option value="" hidden>
+                  Ordenar tecnologia de:
+                </option>
+                <option value="abc">A-Z</option>
+                <option value="zyx">Z-A</option>
+                <option value="popu">Mas demanda</option>
+              </select>
+              <select
+                name="sortExp"
+                id="filter-sortExp"
+                onChange={onSortChange}
+              >
+                <option value="" hidden>
+                  Ordenar experiencia de:
+                </option>
+                <option value="j-s">Jr - Senoir</option>
+                <option value="s-j">Senoir - Jr</option>
+              </select>
+
+              */}
+            </div>
           </div>
         </form>
       </section>

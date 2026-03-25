@@ -57,7 +57,23 @@
 .job-search-field input:active {
   border: none;
 }
+
+.super-job-select {
+  display: flex;
+  justify-content: space-between;
+}
+
 .job-search-select {
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  backdrop-filter: blur(6px);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  max-width: 550px;
+}
+.sorted {
   margin-top: var(--space-md);
   display: flex;
   align-items: center;

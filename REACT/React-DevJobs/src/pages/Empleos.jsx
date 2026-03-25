@@ -12,6 +12,11 @@ const Empleos = () => {
     experiencia: "",
   });
 
+  const [orden, setOrden] = useState("");
+
+  const [loading, setLoading] = useState(true);
+  const [notData, _setNotData] = useState(true);
+
   const [paginaActual, setPaginaActual] = useState(1);
   const [trabajosPorPagina] = useState(5);
   const [inputSearch, setInputSearch] = useState("");
@@ -20,13 +25,23 @@ const Empleos = () => {
   const indicePrimero = indiceUltimo - trabajosPorPagina;
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then((data) => setTrabajos(data))
-      .catch(console.error);
+    const fetchJobs = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("/data.json");
+        const data = await res.json();
+        setTrabajos(data);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchJobs();
   }, []);
 
   const onInputChange = (e) => {
+    e.preventDefault();
     setPaginaActual(1);
     setInputSearch(e.target.value);
   };
@@ -47,6 +62,11 @@ const Empleos = () => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const onSortChange = (e) => {
+    setPaginaActual(1);
+    setOrden(e.target.value);
   };
 
   useEffect(() => {
@@ -80,11 +100,28 @@ const Empleos = () => {
     );
   });
 
-  const cantidad = trabajosFiltrados.length;
+  const trabajosOrdenados = [...trabajosFiltrados].sort((a, b) => {
+    switch (orden) {
+      case "abc":
+        return a.empresa.localeCompare(b.empresa);
+      case "zyx":
+        return b.empresa.localeCompare(a.empresa);
+      case "new":
+        return a.fecha.localeCompare(b.fecha);
+      case "j-s":
+        return a.data.nivel.localeCompare(b.data.nivel);
+      case "s-j":
+        return b.data.nivel.localeCompare(a.data.nivel);
+
+      default:
+    }
+  });
+
+  const cantidad = trabajosOrdenados.length;
 
   const totalPaginas = Math.ceil(cantidad / trabajosPorPagina);
 
-  const trabajosVisibles = trabajosFiltrados.slice(indicePrimero, indiceUltimo);
+  const trabajosVisibles = trabajosOrdenados.slice(indicePrimero, indiceUltimo);
   const clickPagina = (numero) => setPaginaActual(numero);
   const clickPrev = (numero) => setPaginaActual(numero);
   const clickNext = (numero) => setPaginaActual(numero);
@@ -95,9 +132,12 @@ const Empleos = () => {
       <HeroJob
         onFiltroChange={onFiltroChange}
         onInputChange={onInputChange}
+        onSortChange={onSortChange}
         tecnologiasDisponibles={tecnologiasDisponibles}
       />
       <JobList
+        loadingPage={loading}
+        notFound={notData}
         trabajos={trabajosVisibles}
         cantidad={cantidad}
         paginas={totalPaginas}
