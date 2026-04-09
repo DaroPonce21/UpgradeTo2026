@@ -5,6 +5,7 @@ const HeroJob = ({
   onInputChange,
   tecnologiasDisponibles,
   onSortChange,
+  resetFiltros,
 }) => {
   return (
     <main className="container">
@@ -101,36 +102,12 @@ const HeroJob = ({
                 <option value="j-s">Junior - Senior</option>
                 <option value="s-j">Senior - Junior</option>
               </select>
-
-              {/*Para un futuro
-              <select
-                name="sortTech"
-                id="filter-sortTech"
-                onChange={onSortChange}
-              >
-                <option value="" hidden>
-                  Ordenar tecnologia de:
-                </option>
-                <option value="abc">A-Z</option>
-                <option value="zyx">Z-A</option>
-                <option value="popu">Mas demanda</option>
-              </select>
-              <select
-                name="sortExp"
-                id="filter-sortExp"
-                onChange={onSortChange}
-              >
-                <option value="" hidden>
-                  Ordenar experiencia de:
-                </option>
-                <option value="j-s">Jr - Senoir</option>
-                <option value="s-j">Senoir - Jr</option>
-              </select>
-
-              */}
             </div>
           </div>
         </form>
+        <button className="" onClick={resetFiltros} id="restart" name="restart">
+          Restaurar todos los filtros
+        </button>
       </section>
     </main>
   );

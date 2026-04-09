@@ -166,7 +166,7 @@
     "data": {
       "technology": ["php"],
       "modalidad": "remoto",
-      "nivel": "junior"
+      "nivel": "training"
     }
   },
   {
@@ -232,7 +232,7 @@
     "data": {
       "technology": ["vue"],
       "modalidad": "hibrido",
-      "nivel": "junior"
+      "nivel": "training"
     }
   },
   {
