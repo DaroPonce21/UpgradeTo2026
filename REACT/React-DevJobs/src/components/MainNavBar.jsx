@@ -21,13 +21,12 @@ const MainNavBar = () => {
         </a>
 
         <nav aria-label="Menu principal">
-          <a href="">Buscar</a>
           <a href="./empleos">Empleos</a>
-          <a href="/empresas">Empresas</a>
+         <a href="/empresas">Empresas</a>
           <a href="/salarios">Salarios</a>
         </nav>
         <div className="auth-buttons">
-          <a href="/publicar">Publicar un empleo</a>
+         <a href="/publicar">Publicar un empleo</a>
           <a href="/login">Iniciar sesión</a>
         </div>
       </div>

@@ -1,130 +1,104 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import HeroJob from "../components/HeroJob";
 import JobList from "../components/JobList";
 import Pagination from "../components/Pagination";
-import useDebounce from "../hooks/useDebounce";
-import useJobs from "./../hooks/useJobs";
-import useFielters from "./../hooks/useFielters";
+
+import useJobs from "../hooks/useJobs";
+import useFilters from "../hooks/useFilters";
+import usePagination from "../hooks/usePagination";
+import useTechnologies from "../hooks/useTechnologies";
+import useFiltersState from "../hooks/useFiltersState";
+import { useEffect } from "react";
 
 const Empleos = () => {
-  /*-------------------------------LLAMADAS-------------------------------*/
-  const [inputSearch, setInputSearch] = useState("");
-  const debouncedSearch = useDebounce(inputSearch, 300);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { trabajos, loading } = useJobs();
 
-  const useJobsData = useJobs();
-  const { trabajos, loading } = useJobsData;
+  const { inputSearch, setInputSearch, filtros, setFiltros, orden, setOrden } =
+    useFiltersState();
 
-  const [orden, setOrden] = useState("");
-  const [filtros, setFiltros] = useState({
-    tecnologia: "",
-    ubicacion: "",
-    experiencia: "",
-  });
-
-  const useFieltersData = useFielters(
-    filtros,
+  const { resultados, debouncedSearch } = useFilters(
     trabajos,
-    debouncedSearch,
+    inputSearch,
     orden,
+    filtros,
   );
-  const { memoOrden } = useFieltersData;
 
-  /*------------------------------- ESTADOS -------------------------------*/
+  const { paginaActual, setPaginaActual, totalPaginas, resultadosPaginados } =
+    usePagination(resultados);
 
-  const [paginaActual, setPaginaActual] = useState(1);
-  const [trabajosPorPagina] = useState(5);
-
-  const indiceUltimo = paginaActual * trabajosPorPagina;
-  const indicePrimero = indiceUltimo - trabajosPorPagina;
-
-  /* -------------------------------HOOKS -------------------------------*/
+  const tecnologias = useTechnologies(trabajos);
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    const query = searchParams.get("query") || "";
+    const tecnologia = searchParams.get("tecnologia") || "";
+    const ubicacion = searchParams.get("ubicacion") || "";
+    const experiencia = searchParams.get("experiencia") || "";
+    const sort = searchParams.get("sort") || "";
+
+    if (query !== inputSearch) setInputSearch(query);
+
+    setFiltros({
+      tecnologia,
+      ubicacion,
+      experiencia,
     });
-  }, [paginaActual]);
 
-  const memoTech = useMemo(() => {
-    const tecnologiasDisponibles = [
-      ...new Set(trabajos.flatMap((job) => job.data.technology).sort()),
-    ];
+    setOrden(sort);
+  }, []);
 
-    return tecnologiasDisponibles;
-  }, [trabajos]);
+  useEffect(() => {
+    const params = {};
 
-  const memoTrabajosPorPagina = useMemo(() => {
-    const trabajosVisibles = memoOrden.slice(indicePrimero, indiceUltimo);
-    return trabajosVisibles;
-  }, [indicePrimero, indiceUltimo, memoOrden]);
+    if (debouncedSearch) params.query = debouncedSearch;
+    if (filtros.tecnologia) params.tecnologia = filtros.tecnologia;
+    if (filtros.ubicacion) params.ubicacion = filtros.ubicacion;
+    if (filtros.experiencia) params.experiencia = filtros.experiencia;
+    if (orden) params.sort = orden;
 
-  /* -------------------------------FUNCIONES -------------------------------*/
+    setSearchParams(params);
+  }, [debouncedSearch, filtros, orden]);
 
+  // handlers
   const onInputChange = (e) => {
-    e.preventDefault();
     setPaginaActual(1);
     setInputSearch(e.target.value);
   };
 
   const onFiltroChange = (e) => {
     const { name, value } = e.target;
-
     setPaginaActual(1);
-
-    setFiltros((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFiltros((prev) => ({ ...prev, [name]: value }));
   };
 
   const onSortChange = (e) => {
     setPaginaActual(1);
     setOrden(e.target.value);
   };
-  /*
-  const resetFiltros = () => {
-    setFiltros("");
-    setDebouncedSearch("");
-    setInputSearch("");
-    setOrden("");
-    setPaginaActual(1);
-  };
-  */
-
-  const cantidad = memoOrden.length;
-
-  const totalPaginas = Math.ceil(cantidad / trabajosPorPagina);
-
-  const clickPagina = (numero) => setPaginaActual(numero);
-  const clickPrev = (numero) => setPaginaActual(numero);
-  const clickNext = (numero) => setPaginaActual(numero);
-
-  /*-------------------------------RETURN-------------------------------*/
 
   return (
     <>
       <NavBar />
+
       <HeroJob
         onFiltroChange={onFiltroChange}
         onInputChange={onInputChange}
         onSortChange={onSortChange}
-        tecnologiasDisponibles={memoTech}
-        //  resetFiltros={resetFiltros}
+        tecnologiasDisponibles={tecnologias}
       />
+
       <JobList
         loadingPage={loading}
-        trabajos={memoTrabajosPorPagina}
-        cantidad={cantidad}
+        trabajos={resultadosPaginados}
+        cantidad={resultados.length}
         paginas={totalPaginas}
       />
+
       <Pagination
         paginaActual={paginaActual}
         totalPaginas={totalPaginas}
-        clickPagina={clickPagina}
-        clickPrev={clickPrev}
-        clickNext={clickNext}
+        setPagina={setPaginaActual}
       />
     </>
   );

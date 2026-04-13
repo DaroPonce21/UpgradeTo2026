@@ -5,14 +5,13 @@ const HeroJob = ({
   onInputChange,
   tecnologiasDisponibles,
   onSortChange,
-  resetFiltros,
 }) => {
   return (
     <main className="container">
       <section className="Hero-job">
         <h1>Encuentra tu próximo trabajo</h1>
         <p>Explora miles de oportunidades en el sector tecnológico</p>
-        <form action="search" className="job-form">
+        <form className="job-form" onSubmit={(e) => e.preventDefault()}>
           <div className="job-search-field">
             <svg
               aria-hidden="true"
@@ -105,9 +104,6 @@ const HeroJob = ({
             </div>
           </div>
         </form>
-        <button className="" onClick={resetFiltros} id="restart" name="restart">
-          Restaurar todos los filtros
-        </button>
       </section>
     </main>
   );

@@ -1,25 +1,41 @@
-import React from "react";
 import "../styles/JobDescription.css";
+import { Link, useParams } from "react-router-dom";
+import useJobs from "../hooks/useJobs";
+import useAppliedJobs from "../hooks/useAppliedJobs";
 
 const JobDescription = () => {
+  const { id } = useParams();
+  const { trabajos } = useJobs();
+  const job = trabajos.find((t) => t.id === id);
+  const { handleApply, aplicado } = useAppliedJobs(id);
+  if (!job) return <p>Cargando...</p>;
+  console.log(job);
+
   return (
     <main className="container">
       <header className="directorio">
-        <p>Empleos</p>
+        <Link to="/empleos">
+          <p>Empleos</p>
+        </Link>
         <p>/</p>
-        <p className="job-name">Ingeniero de Software</p>
+        <p className="job-name">{job.titulo}</p>
       </header>
 
       <section className="title">
         <header>
           <div className="title-bottom">
-            <h1>Web Developer</h1>
-            <button className="button-apply">Aplicar ahora</button>
+            <h1>{job.titulo}</h1>
+            <button
+              className={aplicado ? "button-apply-aplicado" : "button-apply"}
+              onClick={handleApply}
+            >
+              {aplicado ? "Aplicado" : "Aplicar"}
+            </button>
           </div>
           <div className="props">
-            <p>PicaCodigos</p>
+            <p>{job.empresa}</p>
             <p>|</p>
-            <p>Hibrido</p>
+            <p>{job.ubicacion}</p>
           </div>
         </header>
       </section>
@@ -27,12 +43,7 @@ const JobDescription = () => {
       <section className="descripcion">
         <article>
           <h2>Descripción del puesto</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            corporis vero minus quam dolorem amet ipsum nostrum, impedit iusto
-            autem exercitationem sequi sint consectetur voluptate quibusdam
-            eaque doloribus, modi provident!
-          </p>
+          <p>{job.descripcion}</p>
         </article>
 
         <article>
@@ -266,7 +277,12 @@ const JobDescription = () => {
         </article>
       </section>
       <div className="footer-bottom">
-        <button className="button-final">Aplicar ahora</button>
+        <button
+          className={aplicado ? "button-apply-aplicado" : "button-apply"}
+          onClick={handleApply}
+        >
+          {aplicado ? "Aplicado" : "Aplicar"}
+        </button>
       </div>
     </main>
   );

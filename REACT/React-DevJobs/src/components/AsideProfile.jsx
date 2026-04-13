@@ -1,3 +1,4 @@
+import React from "react";
 import "../styles/AsideProfile.css";
 
 const AsideProfile = () => {
@@ -23,8 +24,8 @@ const AsideProfile = () => {
           </svg>
         </div>
         <div>
-          <h2>name</h2>
-          <p>Job</p>
+          <h2>Dario Ponce</h2>
+          <p>Programador Frontend</p>
         </div>
       </nav>
       <section>
@@ -43,7 +44,7 @@ const AsideProfile = () => {
             </svg>
             <a>Inicio</a>
           </li>
-          <li>
+          <li className="active">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

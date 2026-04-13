@@ -54,6 +54,10 @@
   background: var(--color-button-click);
 }
 
+.button-apply-aplicado {
+  background: var(--color-button-click);
+}
+
 .descripcion {
   border-bottom: solid 1px var(--color-bg-muted);
   border-top: solid 1px var(--color-bg-muted);

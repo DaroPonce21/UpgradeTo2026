@@ -1,12 +1,6 @@
 import "../styles/Pagination.css";
 
-const Pagination = ({
-  paginaActual,
-  totalPaginas,
-  clickPagina,
-  clickPrev,
-  clickNext,
-}) => {
+const Pagination = ({ paginaActual, totalPaginas, setPagina }) => {
   const getPaginas = () => {
     const paginas = [];
     const delta = 1;
@@ -33,7 +27,7 @@ const Pagination = ({
         <li key={paginaActual - 1}>
           {" "}
           <button
-            onClick={() => clickPrev(paginaActual - 1)}
+            onClick={() => setPagina(paginaActual - 1)}
             disabled={paginaActual === 1}
           >
             Prev
@@ -45,7 +39,7 @@ const Pagination = ({
               <span>...</span>
             ) : (
               <button
-                onClick={() => clickPagina(p)}
+                onClick={() => setPagina(p)}
                 className={paginaActual == p ? "active" : ""}
               >
                 {p}
@@ -55,7 +49,7 @@ const Pagination = ({
         ))}
         <li key={paginaActual + 1}>
           <button
-            onClick={() => clickNext(paginaActual + 1)}
+            onClick={() => setPagina(paginaActual + 1)}
             disabled={paginaActual === totalPaginas}
           >
             Next

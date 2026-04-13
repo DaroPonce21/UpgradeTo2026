@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/Hero.css";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const query = e.target.elements["empleos"].value.trim();
+    if (query) {
+      navigate(`/empleos?query=${encodeURIComponent(query)}`);
+    }
+  };
   return (
     <section className="hero">
       <h1 className="hero-title">Encuentra el trabajo de tus sueños</h1>
@@ -9,7 +18,7 @@ const Hero = () => {
         oportunidad
       </p>
 
-      <form role="search" className="hero-search">
+      <form className="hero-search" onSubmit={handleSearch}>
         <div className="search-field">
           <svg
             aria-hidden="true"
@@ -36,6 +45,7 @@ const Hero = () => {
             type="text"
             required
             placeholder="Buscar empleos por título, habilidad o empresa"
+            name="empleos"
           />
           <button type="submit">Buscar</button>
         </div>

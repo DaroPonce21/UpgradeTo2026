@@ -22,7 +22,6 @@ const NavBar = () => {
         </a>
 
         <nav aria-label="Menu principal">
-          <a href="">Buscar</a>
           <a href="./empleos">Empleos</a>
           <a href="/empresas">Empresas</a>
           <a href="/salarios">Salarios</a>

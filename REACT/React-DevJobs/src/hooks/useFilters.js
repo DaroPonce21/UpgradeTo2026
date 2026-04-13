@@ -1,9 +1,11 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
+import useDebounce from "./useDebounce";
 
-const useFielters = (trabajos, debouncedSearch, orden, filtros) => {
+const useFilters = (trabajos, inputSearch, orden, filtros) => {
+  const debouncedSearch = useDebounce(inputSearch, 300);
 
-  const memoFiltros = useMemo(() => {
-    const trabajosFiltrados = trabajos.filter((job) => {
+  const resultados = useMemo(() => {
+    return trabajos.filter((job) => {
       const matchesSearch =
         !debouncedSearch ||
         job.titulo.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
@@ -22,31 +24,30 @@ const useFielters = (trabajos, debouncedSearch, orden, filtros) => {
         matchesSearch && matchesTech && matchesUbicacion && matchesExperiencia
       );
     });
-    return trabajosFiltrados;
-  }, [debouncedSearch, filtros, trabajos]);
+  }, [trabajos, debouncedSearch, filtros]);
 
-  const memoOrden = useMemo(() => {
+  const resultadosOrdenados = useMemo(() => {
     const ranking = {
       training: 0,
       junior: 1,
       "semi-senior": 2,
       senior: 3,
     };
+
     const SORTS = {
       abc: (a, b) => a.empresa.localeCompare(b.empresa),
       zyx: (a, b) => b.empresa.localeCompare(a.empresa),
-      new: (a, b) => a.fecha.localeCompare(b.fecha),
+      new: (a, b) => b.fecha.localeCompare(a.fecha),
       "j-s": (a, b) => ranking[a.data.nivel] - ranking[b.data.nivel],
       "s-j": (a, b) => ranking[b.data.nivel] - ranking[a.data.nivel],
     };
-    let trabajosOrdenados = [];
-    if (orden !== "") {
-      trabajosOrdenados = [...memoFiltros].sort(SORTS[orden]);
-    } else {
-      trabajosOrdenados = [...memoFiltros];
-    }
-    return trabajosOrdenados;
-  }, [orden, memoFiltros]);
+
+    if (!orden) return resultados;
+
+    return [...resultados].sort(SORTS[orden]);
+  }, [orden, resultados]);
+
+  return { resultados: resultadosOrdenados, debouncedSearch };
 };
 
-export default useFielters;
+export default useFilters;
